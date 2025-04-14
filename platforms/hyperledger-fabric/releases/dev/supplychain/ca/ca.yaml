@@ -53,7 +53,7 @@ spec:
       tlsStatus: true
       adminUsername: supplychain-admin
       adminPassword: supplychain-adminpw
-      subject: "''"'"'/C=US/ST=California/L=San Francisco/O=Supplychain'"'"''"
+      subject: '/C=US/ST=California/L=San Francisco/O=Supplychain'
       clusterIpPort: 7054
 
     labels:
