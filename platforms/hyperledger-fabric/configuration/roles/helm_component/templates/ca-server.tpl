@@ -40,6 +40,9 @@ spec:
       size: 512Mi
       reclaimPolicy: "Delete"
       volumeBindingMode: Immediate
+{% if sc_name is defined and sc_name %}
+      storageClass: "{{ sc_name }}"
+{% endif %}
       allowedTopologies:
         enabled: false
 
