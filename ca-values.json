@@ -1,0 +1,55 @@
+{
+  "global": {
+    "cluster": {
+      "cloudNativeServices": false,
+      "kubernetesUrl": "https://192.168.0.72:6443",
+      "provider": "k3s_longhorn"
+    },
+    "proxy": {
+      "externalUrlSuffix": "192.168.0.72.nip.io",
+      "provider": "haproxy"
+    },
+    "serviceAccountName": "vault-auth",
+    "vault": {
+      "address": "https://vault1.marketscloud.ng:8200",
+      "authPath": "devsupplychain",
+      "network": "fabric",
+      "role": "vault-role",
+      "secretEngine": "secretsv2",
+      "secretPrefix": "data/devsupplychain",
+      "tls": false,
+      "type": "hashicorp"
+    }
+  },
+  "image": {
+    "alpineUtils": "ghcr.io/hyperledger/bevel-alpine:latest",
+    "ca": "ghcr.io/hyperledger/bevel-fabric-ca:latest",
+    "pullSecret": ""
+  },
+  "labels": {
+    "deployment": null,
+    "pvc": null,
+    "service": [
+      {
+        "example1": "example2"
+      }
+    ]
+  },
+  "server": {
+    "adminPassword": "supplychain-adminpw",
+    "adminUsername": "supplychain-admin",
+    "clusterIpPort": 7054,
+    "removeCertsOnDelete": true,
+    "subject": "/C=US/ST=California/L=San Francisco/O=Supplychain",
+    "tlsStatus": true
+  },
+  "storage": {
+    "allowedTopologies": {
+      "enabled": false
+    },
+    "reclaimPolicy": "Delete",
+    "size": "512Mi",
+    "storageClass": "longhorn",
+    "volumeBindingMode": "Immediate"
+  }
+}
