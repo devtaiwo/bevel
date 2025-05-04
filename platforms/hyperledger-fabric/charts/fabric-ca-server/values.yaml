@@ -54,7 +54,7 @@ storage:
   # NOTE: when you set this to Retain, the volume WILL persist after the chart is delete and you need to manually delete it
   reclaimPolicy: "Delete" # choose from: Delete | Retain
   volumeBindingMode: Immediate # choose from: Immediate | WaitForFirstConsumer
-  storageClass: ""  # Empty by default, will use cluster default if not specified
+  storageClass: "longhorn"  # Empty by default, will use cluster default if not specified
   allowedTopologies:
     enabled: false
 
