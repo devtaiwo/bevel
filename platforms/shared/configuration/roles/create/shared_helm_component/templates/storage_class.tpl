@@ -9,6 +9,10 @@ provisioner: kubernetes.io/aws-ebs
 provisioner: pd.csi.storage.gke.io
 {% elif cloud_provider == "minikube" %}
 provisioner: k8s.io/minikube-hostpath
+{% elif cloud_provider == "k3s" %}
+provisioner: k8s.io/local-path
+{% elif cloud_provider == "k3s_longhorn" %}
+provisioner: driver.longhorn.io
 {% endif %}
 {% if cloud_provider == "aws" %}
 allowedTopologies:
