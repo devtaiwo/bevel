@@ -684,12 +684,16 @@
             "aws-baremetal",
             "azure",
             "gcp",
-            "minikube"
+            "minikube",
+            "k3s",
+            "k3s_longhorn"
           ]
         },
         "gcp": {},
         "azure": {},
         "minikube": {},
+        "k3s": {},
+        "k3s_longhorn": {},
         "name": {
           "type": "string",
           "pattern": "^[a-z0-9-]{1,30}$"
