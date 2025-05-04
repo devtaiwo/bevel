@@ -290,6 +290,4 @@ spec:
       resources:
         requests:
           storage: "{{ .Values.storage.size }}"
-          {{- if .Values.storage.storageClass }}
-          storageClassName: {{ .Values.storage.storageClass }}
-          {{- end }}
+
