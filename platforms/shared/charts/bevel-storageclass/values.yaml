@@ -30,6 +30,8 @@ parameters:
     replicationtype: none
   minikube:
     encrypted: "true"
+  k3s:
+    encrypted: "true"
   azure:
     skuName: StandardSSD_LRS
     kind: Managed
