@@ -20,7 +20,7 @@ spec:
     global:
       serviceAccountName: vault-auth
       cluster:
-        provider: minikube
+        provider: k3s_longhorn
         cloudNativeServices: false
         kubernetesUrl: https://192.168.0.72:6443
       vault:
