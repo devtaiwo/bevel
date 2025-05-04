@@ -40,6 +40,7 @@ spec:
       size: 512Mi
       reclaimPolicy: "Delete"
       volumeBindingMode: Immediate
+      storageClass: "longhorn"
       allowedTopologies:
         enabled: false
 
