@@ -5,4 +5,4 @@ metadata:
 provisioner: driver.longhorn.io
 reclaimPolicy: {{ .Values.storage.reclaimPolicy }}
 volumeBindingMode: {{ .Values.storage.volumeBindingMode }}
-storageClass: "longhorn"
+
