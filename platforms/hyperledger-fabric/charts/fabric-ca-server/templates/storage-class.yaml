@@ -1,9 +1,9 @@
-apiVersion: storage.k8s.io/v1
-kind: StorageClass
-metadata:
-  # name: {{ .Values.storage.class }}
-  name: storage-{{ .Release.Namespace }}-{{ .Release.Name }}
-provisioner: driver.longhorn.io
-reclaimPolicy: {{ .Values.storage.reclaimPolicy }}
-volumeBindingMode: {{ .Values.storage.volumeBindingMode }}
+# apiVersion: storage.k8s.io/v1
+# kind: StorageClass
+# metadata:
+#   # name: {{ .Values.storage.class }}
+#   name: storage-{{ .Release.Namespace }}-{{ .Release.Name }}
+# provisioner: driver.longhorn.io
+# reclaimPolicy: {{ .Values.storage.reclaimPolicy }}
+# volumeBindingMode: {{ .Values.storage.volumeBindingMode }}
 
