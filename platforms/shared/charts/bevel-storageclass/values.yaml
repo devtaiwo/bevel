@@ -15,7 +15,7 @@ global:
 # This "provisioner" is an optional field.
 # Fill it only if you want to use a specific provisioner of your choice. 
 # Otherwise, leave it empty to use the default provisioner based on the value of "cluster.provider" field.
-provisioner: 
+provisioner: driver.longhorn.io
 
 # The parameters that will be passed to the storage provisioner.
 # The `aws` key specifies the parameters that will be passed to the AWS storage provisioner.
