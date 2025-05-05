@@ -14,11 +14,6 @@ provisioner: k8s.io/local-path
 {% elif cloud_provider == "k3s_longhorn" %}
 provisioner: driver.longhorn.io
 {% endif %}
-{% if cloud_provider == "k3s_longhorn" %}
-storageClass: "longhorn"  # Direct value for your k3s setup
-allowedTopologies:
-  enabled: false
-{% endif %}
 {% if cloud_provider == "aws" %}
 allowedTopologies:
   enabled: false
