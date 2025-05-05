@@ -55,6 +55,7 @@ storage:
   reclaimPolicy: "Delete" # choose from: Delete | Retain
   volumeBindingMode: Immediate # choose from: Immediate | WaitForFirstConsumer
   # storageClass: "longhorn"  # Empty by default, will use cluster default if not specified
+  class: storage-{{ .Release.Name }}
   allowedTopologies:
     enabled: false
 
