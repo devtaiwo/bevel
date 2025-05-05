@@ -34,7 +34,7 @@ parameters:
   k3s:
     encrypted: "true"
   k3s_longhorn:
-    encrypted: "true"
+    encrypted: "false"
   azure:
     skuName: StandardSSD_LRS
     kind: Managed
