@@ -2,7 +2,7 @@
 # kind: StorageClass
 # metadata:
 #   # name: {{ .Values.storage.class }}
-#   name: storage-{{ .Release.Namespace }}-{{ .Release.Name }}
+#   name: {{ .Release.Namespace }}-storage-{{ .Release.Name }}
 # provisioner: driver.longhorn.io
 # reclaimPolicy: {{ .Values.storage.reclaimPolicy }}
 # volumeBindingMode: {{ .Values.storage.volumeBindingMode }}
