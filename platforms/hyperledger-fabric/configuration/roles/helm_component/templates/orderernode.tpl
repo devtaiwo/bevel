@@ -55,7 +55,7 @@ spec:
         caAdminPassword: {{ org_name }}-adminpw
         orgName: {{ org_name }}
         type: orderer
-        componentSubject: "{{ component_subject | quote }}"
+        componentSubject: "{{ namespace }}-{{ org_name }}"
 
       settings:
         createConfigMaps: {{ create_configmaps }}
