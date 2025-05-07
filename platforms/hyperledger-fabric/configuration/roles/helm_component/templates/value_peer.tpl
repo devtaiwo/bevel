@@ -57,7 +57,7 @@ spec:
         caAdminPassword: {{ name }}-adminpw
         orgName: {{ name }}
         type: peer
-        componentSubject: "{{ namespace }}-{{ org_name }}"
+        componentSubject: "{{ namespace }}-{{ name }}"
 
 {% if org.users is defined %}
       users: 
