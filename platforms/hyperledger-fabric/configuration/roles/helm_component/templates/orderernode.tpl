@@ -55,7 +55,7 @@ spec:
         caAdminPassword: {{ org_name }}-adminpw
         orgName: {{ org_name }}
         type: orderer
-        componentSubject: "{{ namespace }}-{{ org_name }}"
+        componentSubject: "O={{ org_name }},OU={{ org_name }},L=51.50/-0.13/London,C=GB"
 
       settings:
         createConfigMaps: {{ create_configmaps }}
