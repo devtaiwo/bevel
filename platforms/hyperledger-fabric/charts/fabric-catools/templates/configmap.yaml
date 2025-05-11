@@ -487,6 +487,24 @@ data:
   store-vault-orderer.sh: |-
     #!/bin/bash
 
+    # Add this function to ensure orderer certificates are created
+    function generateOrdererCertificates {
+      ORDERER_NAME=$1
+      ORDERER_PATH="${ORG_CYPTO_ORDERER_FOLDER}/${ORDERER_NAME}.${COMPONENT_NAME}/tls/ca.crt"
+      
+      if [ ! -f "${ORDERER_PATH}" ]; then
+        echo "Orderer certificates don't exist for ${ORDERER_NAME}, generating them..."
+        
+        # Source scripts from crypto-scripts-cm
+        cd /crypto-config/scripts
+        
+        # Execute the orderer-script.sh to generate the certificates
+        ./orderer-script.sh ${ORDERER_NAME}
+      else
+        echo "Orderer certificates already exist for ${ORDERER_NAME}, skipping generation"
+      fi
+    }
+    
     formatCertificate () {
       NAME="${1##*/}"
       while IFS= read -r line
@@ -704,6 +722,7 @@ data:
     
     saveAdminSecrets
     ORDERER=$1
+    generateOrdererCertificates $ORDERER  # Add this line
     saveOrdererSecrets $ORDERER
     safeOrderererTlsConfigmap $ORDERER
 ---
