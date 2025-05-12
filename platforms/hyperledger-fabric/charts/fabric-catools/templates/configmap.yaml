@@ -496,7 +496,8 @@ data:
         echo "Orderer certificates don't exist for ${ORDERER_NAME}, generating them..."
         
         # Source scripts from crypto-scripts-cm
-        cd /crypto-config/scripts
+        # cd /crypto-config/scripts
+        cd ${CURRENT_DIR}
         
         # Execute the orderer-script.sh to generate the certificates
         ./orderer-script.sh ${ORDERER_NAME}
