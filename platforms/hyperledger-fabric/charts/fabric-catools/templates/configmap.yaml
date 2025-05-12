@@ -487,20 +487,18 @@ data:
   store-vault-orderer.sh: |-
     #!/bin/bash
 
+    
+
     # Add this function to ensure orderer certificates are created
     function generateOrdererCertificates {
       ORDERER_NAME=$1
       ORDERER_PATH="${ORG_CYPTO_ORDERER_FOLDER}/${ORDERER_NAME}.${COMPONENT_NAME}/tls/ca.crt"
-      
+  
       if [ ! -f "${ORDERER_PATH}" ]; then
         echo "Orderer certificates don't exist for ${ORDERER_NAME}, generating them..."
-        
-        # Source scripts from crypto-scripts-cm
-        # cd /crypto-config/scripts
-        cd ${CURRENT_DIR}
-        
-        # Execute the orderer-script.sh to generate the certificates
-        ./orderer-script.sh ${ORDERER_NAME}
+  
+        # Use the correct absolute path to the orderer-script.sh
+        /root/ca-tools/org/orderer-script.sh ${ORDERER_NAME}
       else
         echo "Orderer certificates already exist for ${ORDERER_NAME}, skipping generation"
       fi
@@ -518,7 +516,8 @@ data:
       TLS_KEY=admin-tls
       MSP_KEY=admin-msp
 {{- if eq .Values.global.vault.type "hashicorp" }}
-      . ../bevel-vault.sh
+      # . ../bevel-vault.sh
+      . /scripts/bevel-vault.sh
       # Calling a function to retrieve the vault token.
       vaultBevelFunc "init"
 
